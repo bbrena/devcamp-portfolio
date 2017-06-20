@@ -29,6 +29,9 @@ class PortfoliosController < ApplicationController
         format.html { redirect_to portfolios_path, notice: 'The record was successfully updated.' }
       else
         format.html { render :edit }
+      end
+    end
+  end
 end
-end
+
 end
