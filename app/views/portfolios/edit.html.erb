@@ -1,6 +1,6 @@
 <h1>Edit this Portfolio Item</h1>
 
-<%= form_for(@portfolio_item) unless @portfolio_item.nil? do |f| %>
+<%= form_for(@portfolio_item) do |f| %>
   <div class="field">
     <%= f.label :title %>
     <%= f.text_field :title %>
