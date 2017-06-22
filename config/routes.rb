@@ -3,6 +3,7 @@
   resources :blogs do
     member do 
       get :toggle_status
+    end
   end
     
   resources :portfolios, except: [:show]
@@ -11,7 +12,6 @@
   get 'about-me', to: 'pages#about'
   get 'contact', to: 'pages#contact'
   
-end
   
   root to: 'pages#home'
 end
