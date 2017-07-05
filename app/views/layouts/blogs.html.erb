@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @page_title %></title>
+    <%= csrf_meta_tags %>
+    
+    <meta name="keywords" content="<%= @seo_keywords %>" />
+
+    <%= stylesheet_link_tag    'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    
+    <%= yield %>
+    
+    <hr>
+    
+    <h3>Navigate Around the Site:</h3>
+  
+      <% if current_user.is_a?(User) %>
+      <div><%= link_to "Logout From Your Account", destroy_user_session_path, method: :delete %></div>
+    <% else %>
+      <div><%= link_to "Register For An Account", new_user_registration_path %></div>
+      <div><%= link_to "Login To Your Account", new_user_session_path %></div>
+    <% end %>
+    
+        <div>
+      <div><%= link_to "Go To Home Page", root_path %></div>
+      <div><%= link_to "Go To About Me Page", about_me_path %></div>
+      <div><%= link_to "Go To Contact Page", contact_path %></div>
+      <div><%= link_to 'Go To Blogs Page', blogs_path %></div>
+      <div><%= link_to 'Go To Portfolios Page', portfolios_path %></div>
+      <div><%= link_to 'Edit Your Account', edit_user_registration_path %></div>
+    </div>
+    
+    <hr>
+    
+    <% if session[:source] %>
+    <p>Thanks for visiting me from <%= session[:source] %>!</p>
+    <% end %>
+  </body>
+</html>
