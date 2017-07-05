@@ -14,14 +14,7 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     
-    <div>
-      <div><%= link_to "Go To Home Page", root_path %></div>
-      <div><%= link_to "Go To About Me Page", about_me_path %></div>
-      <div><%= link_to "Go To Contact Page", contact_path %></div>
-      <div><%= link_to 'Go To Blogs Page', blogs_path %></div>
-      <div><%= link_to 'Go To Portfolios Page', portfolios_path %></div>
-      <div><%= link_to 'Edit Your Account', edit_user_registration_path %></div>
-    </div>
+    <%= render "shared/nav" %>
     
     <% if current_user.is_a?(User) %>
       <%= link_to "Logout From Your Account", destroy_user_session_path, method: :delete %>
