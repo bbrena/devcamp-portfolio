@@ -20,14 +20,12 @@
     
     <h3>Navigate Around the Site:</h3>
   
-      <%= login_helper %>
+    <%= login_helper %>
     
     <%= render "shared/nav", location: 'top' %>
     
     <hr>
     
-    <% if session[:source] %>
-    <p>Thanks for visiting me from <%= session[:source] %>!</p>
-    <% end %>
+    <%= source_helper("portfolio") %>
   </body>
 </html>
