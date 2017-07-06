@@ -20,12 +20,7 @@
     
     <h3>Navigate Around the Site:</h3>
   
-      <% if current_user.is_a?(User) %>
-      <div><%= link_to "Logout From Your Account", destroy_user_session_path, method: :delete %></div>
-    <% else %>
-      <div><%= link_to "Register For An Account", new_user_registration_path %></div>
-      <div><%= link_to "Login To Your Account", new_user_session_path %></div>
-    <% end %>
+      <%= login_helper %>
     
     <%= render "shared/nav", location: 'top' %>
     

@@ -16,12 +16,7 @@
     
     <%= render "shared/nav", location: 'top' %>
     
-    <% if current_user.is_a?(User) %>
-      <%= link_to "Logout From Your Account", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <div><%= link_to "Register For An Account", new_user_registration_path %></div>
-      <div><%= link_to "Login To Your Account", new_user_session_path %></div>
-    <% end %>
+    <%= login_helper %>
     
     <%= yield %>
     
