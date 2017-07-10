@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
-  layout "blogs"
+  layout "blog"
 
   # GET /blogs
   # GET /blogs.json
@@ -80,4 +80,4 @@ class BlogsController < ApplicationController
     def blog_params
       params.require(:blog).permit(:title, :body)
     end
-end
+  end  
