@@ -3,7 +3,7 @@
   <head>
     <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
-    
+
     <meta name="keywords" content="<%= @seo_keywords %>" />
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -13,13 +13,15 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    
+
     <%= render "shared/nav", location: 'top' %>
-    
+
     <%= login_helper %>
-    
+
     <%= yield %>
-    
+
+    <%= copyright_generator %>
+
     <%= source_helper("application") %>
   </body>
 </html>
