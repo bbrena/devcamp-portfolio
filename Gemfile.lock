@@ -1,10 +1,4 @@
 GIT
-  remote: https://github.com/bbrena/Badger_Mushroom_Snake_View_Tool
-  revision: 60065483abc9b2bd53f49051a50cb7e6ea3496f9
-  specs:
-    Badger_Mushroom_Snake_View_Tool (0.1.1)
-
-GIT
   remote: https://github.com/twbs/bootstrap-rubygem
   revision: b156edfee2b9629ad4751ee2a118a04f824ef9eb
   specs:
@@ -16,6 +10,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    Badger_Mushroom_Snake_View_Tool (0.1.1)
     actioncable (5.0.4)
       actionpack (= 5.0.4)
       nio4r (>= 1.2, < 3.0)
@@ -196,7 +191,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  Badger_Mushroom_Snake_View_Tool!
+  Badger_Mushroom_Snake_View_Tool (~> 0.1.1)
   bootstrap!
   byebug
   coffee-rails (~> 4.2)

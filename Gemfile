@@ -57,4 +57,4 @@ gem 'devise', '~> 4.2'
 
 gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
 
-gem 'Badger_Mushroom_Snake_View_Tool', git: 'https://github.com/bbrena/Badger_Mushroom_Snake_View_Tool'
+gem 'Badger_Mushroom_Snake_View_Tool', '~> 0.1.1'
