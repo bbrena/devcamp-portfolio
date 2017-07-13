@@ -1,13 +1,33 @@
 <h1>Contact Me</h1>
 
-<p><%= number_to_phone "7878787887" %></p>
+<hr>
 
-<p><%= number_to_currency "8778" %></p>
-
-<p><%= number_to_percentage "78.87" %></p>
-
-<p><%= number_with_delimiter "7878787887787878878887877777878778888787" %></p>
-
-<p>© BADGER MUSHROOM SQUASH FOR THE WIN!</p>
-
-<p>© PINK WATERMELON DOT TOO!</p>
+<div class="row">
+    <div class="col-md-6">
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>
+            You can contact me through this website at the link below:
+        </p>
+        <p class="lead">
+            <%= link_to "Blog", blogs_path, class: "btn btn-lg btn-secondary" %>
+        </p>
+        <p>
+            You can also contact me at my email:
+        </p>
+        <p>
+            <a href="mailto:banz3398@csddocs.org?subject=Contact" "email me" style="color: #33ccff">My Email</a>
+        </p>
+    </div>
+    
+    <div class="col-md-6">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.
+        1533072139946!2d-77.0389236343407!3d38.89760937957061!2m3!1f0!2f0!3f0!3
+        m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b7bce1485b19%3A0x9fc7bf09fd5d9daf
+        !2sThe+White+House%2C+1600+Pennsylvania+Ave+NW%2C+Washington%2C+DC+20500
+        !5e0!3m2!1sen!2sus!4v1499965041701" width="350" height="300" frameborder
+        ="0" style="border:0" allowfullscreen></iframe>
+    </div>
+</div>
