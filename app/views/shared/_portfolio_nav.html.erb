@@ -11,11 +11,7 @@
       <div class="col-sm-4 py-4">
         <h3 class="text-white">Explore</h3>
         <ul class="list-unstyled">
-          <li><%= link_to "Home", root_path, class: 'text-white' %></li>
-          <li><%= link_to "About Me", about_me_path, class: 'text-white' %></li>
-          <li><%= link_to "Contact Me", contact_path, class: 'text-white' %></li>
-          <li><%= link_to 'Blogs', blogs_path, class: 'text-white' %></li>
-          <li><%= link_to 'Portfolios', portfolios_path, class: 'text-white' %></li>
+          <%= nav_helper 'text-white', 'li' %>
           <li><%= login_helper 'text-white' %></li>
         </ul>
       </div>
