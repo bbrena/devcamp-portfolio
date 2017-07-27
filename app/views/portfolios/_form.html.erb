@@ -1,41 +1,52 @@
 <%= form_for(@portfolio_item) do |f| %>
   <div class="row">
     <div class="col-md-6">
-        <div class="form-group">
-          <%= f.label :title %>
-          <%= f.text_field :title, class: 'form-control' %>
-        </div>
-        
-        <div class="form-group">
-          <%= f.label :subtitle %>
-          <%= f.text_field :subtitle, class: 'form-control' %>
-        </div>
+      <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :subtitle %>
+        <%= f.text_field :subtitle, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <label class="btn btn-primary">
+          Upload A Main Image File <%= f.file_field :main_image, style: 'display:none;' %>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label class="btn btn-primary">
+          Upload A Thumb Image File <%= f.file_field :thumb_image, style: 'display:none;' %>
+        </label>
+      </div>
     </div>
-    
+
     <div class="col-md-6">
       <div class="form-group">
-      <%= f.label :body %>
-      <%= f.text_area :body, class: 'form-control', rows: 15 %>
+        <%= f.label :body %>
+        <%= f.text_area :body, class: 'form-control', rows: 13 %>
       </div>
     </div>
   </div>
-  
+
   <hr>
 
   <div class="col-md-12">
-    <h2>Technologies Used:</h2>
-    
+    <h2>Technolgies Used:</h2>
     <div>
-        <%= f.fields_for :technologies do |technology_form| %>
-          <div class="form-group">
-            <%= technology_form.label :name %>
-            <%= technology_form.text_field :name, class: 'form-control' %>
-          </div>
-        <% end %>
-      </div>
-    
-      <div class="form-group">
-        <%= f.submit 'Save Portfolio Item', class: 'btn btn-primary btn-block' %>
-      </div>
+      <%= f.fields_for :technologies do |technology_form| %>
+        <div class="form-group">
+          <%= technology_form.label :name %>
+          <%= technology_form.text_field :name, class: 'form-control' %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit 'Save Portfolio Item', class: 'btn btn-primary btn-block' %>
+    </div>
   </div>
 <% end %>

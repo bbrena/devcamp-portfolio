@@ -1,7 +1,11 @@
+<br>
+<br>
+<br>
+<br>
 <div class="container">
   <div class="row">
     <div class="col-md-7">
-      <%= image_tag @portfolio_item.main_image unless @portfolio_item.main_image.nil? %>
+      <%= image_tag portfolio_img(@portfolio_item.thumb_image, 'main'), width: '100%' %>
     </div>
       
     <div class="col-md-5">
