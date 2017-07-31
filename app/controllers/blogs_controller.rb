@@ -10,7 +10,7 @@ class BlogsController < ApplicationController
       @blogs = Blog.recent.page(params[:page]).per(5)
     else
       @blogs = Blog.published.recent.page(params[:page]).per(5)
-      @page_title = "Brena B.'s Blog"
+      @page_title = "Beading Brena's Jewelry Blog"
     end
   end
 
@@ -90,6 +90,6 @@ class BlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:title, :body)
+      params.require(:blog).permit(:title, :body, :topic_id)
     end
 end
