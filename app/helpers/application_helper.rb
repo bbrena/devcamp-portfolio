@@ -19,7 +19,7 @@ module ApplicationHelper
   end
   
   def copyright_generator
-    BadgerMushroomSnakeViewTool::Renderer.copyright 'Code To Success', 'All rights reserved'
+    BadgerMushroomSnakeViewTool::Renderer.copyright "Beading Brena's Jewelry", "| All rights reserved"
   end
   
   def nav_items
@@ -38,15 +38,15 @@ module ApplicationHelper
       },
       {
         url: blogs_path,
-        title: 'Chat'
+        title: 'Blog'
       },
       {
         url: portfolios_path,
         title: 'Portfolio'
       },
       {
-        url: tech_news_path,
-        title: 'Tech News'
+        url: beading_news_path,
+        title: 'Beading News'
       }
     ]
   end
