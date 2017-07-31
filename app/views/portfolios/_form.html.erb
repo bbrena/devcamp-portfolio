@@ -1,7 +1,7 @@
 <%= form_for(@portfolio_item) do |f| %>
   <% if @portfolio_item.errors.any? %>
     <% @portfolio_item.errors.full_messages.each do |error| %>
-      <%= js add_gritter(error, title: "Brena's Website", sticky: false) %>
+      <%= alert_generator error  %>
     <% end %>
   <% end %>
   
@@ -19,13 +19,13 @@
 
       <div class="form-group">
         <label class="btn btn-primary">
-          Upload a main image file <%= f.file_field :main_image, style: 'display:none;' %>
+          Upload A Main Image File <%= f.file_field :main_image, style: 'display:none;' %>
         </label>
       </div>
 
       <div class="form-group">
         <label class="btn btn-primary">
-          Upload a thumb image file <%= f.file_field :thumb_image, style: 'display:none;' %>
+          Upload A Thumb Image File <%= f.file_field :thumb_image, style: 'display:none;' %>
         </label>
       </div>
     </div>
