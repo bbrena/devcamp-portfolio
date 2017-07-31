@@ -277,6 +277,43 @@ ALTER SEQUENCE blogs_id_seq OWNED BY blogs.id;
 
 
 --
+-- Name: comments; Type: TABLE; Schema: public; Owner: ubuntu; Tablespace: 
+--
+
+CREATE TABLE comments (
+    id integer NOT NULL,
+    content text,
+    user_id integer,
+    blog_id integer,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.comments OWNER TO ubuntu;
+
+--
+-- Name: comments_id_seq; Type: SEQUENCE; Schema: public; Owner: ubuntu
+--
+
+CREATE SEQUENCE comments_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.comments_id_seq OWNER TO ubuntu;
+
+--
+-- Name: comments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: ubuntu
+--
+
+ALTER SEQUENCE comments_id_seq OWNED BY comments.id;
+
+
+--
 -- Name: friendly_id_slugs; Type: TABLE; Schema: public; Owner: ubuntu; Tablespace: 
 --
 
@@ -529,6 +566,13 @@ ALTER TABLE ONLY blogs ALTER COLUMN id SET DEFAULT nextval('blogs_id_seq'::regcl
 -- Name: id; Type: DEFAULT; Schema: public; Owner: ubuntu
 --
 
+ALTER TABLE ONLY comments ALTER COLUMN id SET DEFAULT nextval('comments_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: ubuntu
+--
+
 ALTER TABLE ONLY friendly_id_slugs ALTER COLUMN id SET DEFAULT nextval('friendly_id_slugs_id_seq'::regclass);
 
 
@@ -581,7 +625,8 @@ environment	development	2017-07-26 14:58:03.762531	2017-07-26 14:58:03.762531
 --
 
 COPY blogs (id, title, body, created_at, updated_at, slug, status, topic_id) FROM stdin;
-18	SALE!	You can now get everything for 25% off!	2017-07-31 14:28:52.195232	2017-07-31 14:29:52.542015	sale	0	\N
+19	Nothing New	Everything is up to date.	2017-07-31 15:28:02.35057	2017-07-31 15:28:02.35057	nothing-new	0	\N
+20	Chat	DO NOT DELETE!	2017-07-31 17:05:11.193893	2017-07-31 17:05:11.193893	chat	0	\N
 \.
 
 
@@ -589,7 +634,32 @@ COPY blogs (id, title, body, created_at, updated_at, slug, status, topic_id) FRO
 -- Name: blogs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ubuntu
 --
 
-SELECT pg_catalog.setval('blogs_id_seq', 18, true);
+SELECT pg_catalog.setval('blogs_id_seq', 20, true);
+
+
+--
+-- Data for Name: comments; Type: TABLE DATA; Schema: public; Owner: ubuntu
+--
+
+COPY comments (id, content, user_id, blog_id, created_at, updated_at) FROM stdin;
+1	the start of my chat	1	19	2017-07-31 16:30:27.534297	2017-07-31 16:30:27.534297
+2	chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat chat	1	19	2017-07-31 17:49:21.40289	2017-07-31 17:49:21.40289
+3	roar!	5	19	2017-07-31 20:55:50.916492	2017-07-31 20:55:50.916492
+4	roaroroaroaroroaroaoroaroaoraor	5	19	2017-07-31 20:56:04.399191	2017-07-31 20:56:04.399191
+5	ja;dsfja;sfd	1	20	2017-07-31 21:07:49.217771	2017-07-31 21:07:49.217771
+6	asdadsf	1	20	2017-07-31 21:07:54.095373	2017-07-31 21:07:54.095373
+7	asdfasdf	1	20	2017-07-31 21:07:55.880756	2017-07-31 21:07:55.880756
+8	dsafasdf	1	20	2017-07-31 21:12:30.492377	2017-07-31 21:12:30.492377
+9	asasdf	1	20	2017-07-31 21:16:51.141522	2017-07-31 21:16:51.141522
+10	23524354235	1	20	2017-07-31 21:17:01.013795	2017-07-31 21:17:01.013795
+\.
+
+
+--
+-- Name: comments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ubuntu
+--
+
+SELECT pg_catalog.setval('comments_id_seq', 10, true);
 
 
 --
@@ -650,6 +720,7 @@ COPY schema_migrations (version) FROM stdin;
 20170626175201
 20170626145924
 20170626144542
+20170731161939
 \.
 
 
@@ -739,9 +810,11 @@ SELECT pg_catalog.setval('topics_id_seq', 3, true);
 --
 
 COPY users (id, email, encrypted_password, name, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, created_at, updated_at, roles) FROM stdin;
+5	roar@roar.com	$2a$11$nPUsD2QwouzUDxDJsC9JtukeqIZJGAyHJLGD3ft9lW6x9o1Q9/kC2	Roar R.	\N	\N	\N	1	2017-07-31 20:55:07.807465	2017-07-31 20:55:07.807465	174.52.66.107	174.52.66.107	2017-07-31 20:55:07.79349	2017-07-31 20:55:07.808631	user
+1	ackids@anzerfamilie.com	$2a$11$4RNaggfmrqV7.lNfa8Y93evZd1edFvpaTPf5GW2lBljo6DbH8TUrq	Brena A.	\N	\N	\N	22	2017-07-31 21:07:36.646758	2017-07-31 20:36:22.43787	174.52.66.107	174.52.66.107	2017-07-26 17:53:03.180266	2017-07-31 21:07:36.648139	site_admin
 2	alpha@example.com	$2a$11$VhRCFRIHPHZzvGScEJ87p.7Nmck5vPhFLcZ.dYCBCwFxcLlAJJsz6	Alpha Alpha	\N	\N	\N	2	2017-07-30 23:36:53.171914	2017-07-30 23:29:39.427795	10.240.0.69	10.240.1.17	2017-07-30 23:29:39.42239	2017-07-30 23:36:53.173252	site_admin
-3	bellachabela@anzerfamilie.com	$2a$11$mZUlDr9Gf716asTslcv92.LBGkTGZhBMGbqRrq0XcwPqXFUSNfZuu	Chelsea A.	\N	\N	\N	1	2017-07-31 14:49:50.52441	2017-07-31 14:49:50.52441	163.248.33.226	163.248.33.226	2017-07-31 14:49:14.377303	2017-07-31 14:53:16.785686	user
-1	ackids@anzerfamilie.com	$2a$11$4RNaggfmrqV7.lNfa8Y93evZd1edFvpaTPf5GW2lBljo6DbH8TUrq	Brena A.	\N	\N	\N	16	2017-07-31 14:56:16.807415	2017-07-31 14:55:50.290629	163.248.33.226	163.248.33.226	2017-07-26 17:53:03.180266	2017-07-31 14:56:16.809046	site_admin
+4	anthonyanzer@cost-engineers.com	$2a$11$/eaO0pLdnUM6ppnDvVM8ieB4jQDhab9BANP6fz/hn/AQnjkZDgSi6	Anthony A.	\N	\N	\N	0	\N	\N	\N	\N	2017-07-31 15:23:44.105962	2017-07-31 15:24:09.727893	user
+3	bellachabela@gmail.com	$2a$11$5JHpEpJDUa.t2aQqZ.CzNupLHrxNUXR3uz9tXcer6BTCNbV4YJ1gK	Chelsea A.	\N	\N	\N	3	2017-07-31 15:34:42.01269	2017-07-31 15:32:24.131616	107.77.228.208	163.248.33.226	2017-07-31 14:49:14.377303	2017-07-31 15:35:29.589372	user
 \.
 
 
@@ -749,7 +822,7 @@ COPY users (id, email, encrypted_password, name, reset_password_token, reset_pas
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ubuntu
 --
 
-SELECT pg_catalog.setval('users_id_seq', 3, true);
+SELECT pg_catalog.setval('users_id_seq', 5, true);
 
 
 --
@@ -766,6 +839,14 @@ ALTER TABLE ONLY ar_internal_metadata
 
 ALTER TABLE ONLY blogs
     ADD CONSTRAINT blogs_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: comments_pkey; Type: CONSTRAINT; Schema: public; Owner: ubuntu; Tablespace: 
+--
+
+ALTER TABLE ONLY comments
+    ADD CONSTRAINT comments_pkey PRIMARY KEY (id);
 
 
 --
@@ -839,6 +920,20 @@ CREATE INDEX index_blogs_on_topic_id ON blogs USING btree (topic_id);
 
 
 --
+-- Name: index_comments_on_blog_id; Type: INDEX; Schema: public; Owner: ubuntu; Tablespace: 
+--
+
+CREATE INDEX index_comments_on_blog_id ON comments USING btree (blog_id);
+
+
+--
+-- Name: index_comments_on_user_id; Type: INDEX; Schema: public; Owner: ubuntu; Tablespace: 
+--
+
+CREATE INDEX index_comments_on_user_id ON comments USING btree (user_id);
+
+
+--
 -- Name: index_friendly_id_slugs_on_slug_and_sluggable_type; Type: INDEX; Schema: public; Owner: ubuntu; Tablespace: 
 --
 
@@ -888,11 +983,27 @@ CREATE UNIQUE INDEX index_users_on_reset_password_token ON users USING btree (re
 
 
 --
+-- Name: fk_rails_03de2dc08c; Type: FK CONSTRAINT; Schema: public; Owner: ubuntu
+--
+
+ALTER TABLE ONLY comments
+    ADD CONSTRAINT fk_rails_03de2dc08c FOREIGN KEY (user_id) REFERENCES users(id);
+
+
+--
 -- Name: fk_rails_7f5637ea0d; Type: FK CONSTRAINT; Schema: public; Owner: ubuntu
 --
 
 ALTER TABLE ONLY blogs
     ADD CONSTRAINT fk_rails_7f5637ea0d FOREIGN KEY (topic_id) REFERENCES topics(id);
+
+
+--
+-- Name: fk_rails_b9ae98a823; Type: FK CONSTRAINT; Schema: public; Owner: ubuntu
+--
+
+ALTER TABLE ONLY comments
+    ADD CONSTRAINT fk_rails_b9ae98a823 FOREIGN KEY (blog_id) REFERENCES blogs(id);
 
 
 --
