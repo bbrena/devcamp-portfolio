@@ -10,7 +10,7 @@
   <%= link_to 'Back', blogs_path %>
 
   <p>
-    <%= @blog.body %>
+    <%= markdown @blog.body %>
   </p>
   
   <%= render 'comments/comment_form' %>
