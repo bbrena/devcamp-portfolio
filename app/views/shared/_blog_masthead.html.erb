@@ -2,6 +2,11 @@
   <div class="container">
     <h1 class="blog-title">Beading Brena's Jewelry Blog</h1>
     <p class="lead blog-description">Read my blogs here!</p>
-    <%= link_to 'Create A New Blog', new_blog_path if logged_in?(:site_admin) %>
+      <span class="btn btn-secondary">
+      <%= link_to 'Create A New Blog', new_blog_path if logged_in?(:site_admin) %>
+      </span>
+      <span class="btn btn-secondary">
+        <%= link_to 'Sort Blogs By Topics', topics_path %>
+      </span>      
   </div>
 </div>
