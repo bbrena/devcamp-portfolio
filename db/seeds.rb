@@ -1,3 +1,25 @@
+User.create!(
+  email: "ackids@anzerfamilie.com",
+  password: "ABCDEFG",
+  password_confirmation: "ABCDEFG",
+  name: "Brena A.",
+  roles: "site_admin"
+)
+
+User.create!(
+  email: "bellachabela@gmail.com",
+  password: "ABCDEFG",
+  password_confirmation: "ABCDEFG",
+  name: "Chelsea A.",
+)
+
+User.create!(
+  email: "anthonyanzer@gmail.com",
+  password: "ABCDEFG",
+  password_confirmation: "ABCDEFG",
+  name: "Anthony A.",
+)
+
 3.times do |topic|
 Topic.create!(
   title:"Topic #{topic}"

@@ -30,11 +30,21 @@ a:hover {
 html,
 body {
   height: 100%;
+  font-family: 'Raleway', sans-serif;
 }
 body {
   color: #fff;
   text-align: center;
   text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: 'Lobster', cursive;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -219,4 +229,34 @@ body {
 
 .tech-news > .card {
   padding: 11px;
+}
+
+.app-card-container {
+  color: black;
+  text-align: center;
+  width: 60em;
+}
+
+.app-card-container > .card {
+  padding: 40px;
+}
+
+.beaded-dragonfly {
+  border: 1px solid grey;
+}
+
+.card-block {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 20px;
+}
+
+.skill {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
 }
