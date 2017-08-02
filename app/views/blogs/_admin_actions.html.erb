@@ -1,0 +1,11 @@
+<% if logged_in?(:site_admin) %>
+  <nav class="breadcrumb blogcrumb">
+    <% if blog.status == "draft" %>
+      <%= link_to fa_icon('toggle-off'), toggle_status_blog_path(blog) %>
+    <% else blog.status == "published" %>
+      <%= link_to fa_icon('toggle-on'), toggle_status_blog_path(blog) %>
+    <% end %>
+    <%= link_to fa_icon('pencil'), edit_blog_path(blog) %>
+    <%= link_to fa_icon('trash'), blog, method: :delete, data: { confirm: 'Are you sure you want to delete this blog post?' } %>
+  </nav>  
+<% end %>
