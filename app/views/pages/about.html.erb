@@ -5,13 +5,71 @@
     <hr>
     
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-4">
         <%= image_tag "beadeddragonfly.jpeg", width: 300, alt: "Beaded Dragonfly", class: "beaded-dragonfly" %>
+        
+        <div class="skills">
+          <% @skills.each do |skill| %>
+            <div class="skill">
+              <h5><%= skill.title %></h5>
+              <div class="progress">
+                <div class="progress-bar progress-bar-striped bg-warning"
+                role="progressbar"
+                aria-valuenow="<%= skill.percent_utilized %>"
+                aria-valuemax="100"
+                style="width: <%= skill.percent_utilized %>%"
+                ></div>
+              </div>
+            </div>
+          <% end %>  
+        </div>
       </div>
-    </div>
-    
-        <div class="row">
-          <div class="col-md-12">
+      
+      <div class="col-md-8">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#codingExperience" aria-expanded="false" aria-controls="codingExperience">
+          Coding Experience
+        </button>
+            <p>
+              <div class="collapse" id="codingExperience">
+                <div class="card-block">
+                    I have some experience in coding. I know HTML, CSS, SCSS, Ruby on Rails,
+                  Ruby, BootStrap, Devise and the command line. I can work in the terminal
+                  and in Sublime Text. This website was created from scratch with my knowledge.
+                  I have taken Code To Success and I have an account on CodeCademy. I also have
+                  accounts on PluralSight and Cloud 9. I have created my own RubyGem and published
+                  it to RubyGems.org. I like coding and programming because there is always something
+                  new to learn and it encourages me to use problem solving skills.
+                </div>
+              </div>
+            </p>
+             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#myPrices" aria-expanded="false" aria-controls="myPrices">
+                Prices
+            </button>
+            <p>
+              <div class="collapse" id="myPrices">
+                <div class="card-block">
+                  <p>
+                    <ul>
+                      <li>Bracelets: $4</li>
+                      <li>Backback Charms: 50¢</li>
+                      <li>Anklets: $4</li>
+                      <li>Necklaces: $4.50</li>
+                      <li>Dangling Earrings: $2</li>
+                      <li>Beads: Varies</li>
+                      <ul>
+                        <li>Some - Free</li>
+                        <li>Small - 1¢ each</li>
+                        <li>Medium - 3¢ each</li>
+                        <li>Large - 5¢ each</li>
+                        <li>Others - 10¢ each</li>
+                      </ul>
+                    </ul>
+                    
+                    <p>**Disclaimer: This is always up for change**</p>
+                  </p>
+                </div>
+              </div>
+            </p>
             <p>
               <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#myFamily" aria-expanded="false" aria-controls="myFamily">
                 My Family
@@ -46,26 +104,6 @@
             </p>
             
             <p>
-              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#codingExperience" aria-expanded="false" aria-controls="codingExperience">
-                Coding Experience
-              </button>
-            </p>
-            
-            <p>
-              <div class="collapse" id="codingExperience">
-                <div class="card-block">
-                    I have some experience in coding. I know HTML, CSS, SCSS, Ruby on Rails,
-                  Ruby, BootStrap, Devise and the command line. I can work in the terminal
-                  and in Sublime Text. This website was created from scratch with my knowledge.
-                  I have taken Code To Success and I have an account on CodeCademy. I also have
-                  accounts on PluralSight and Cloud 9. I have created my own RubyGem and published
-                  it to RubyGems.org. I like coding and programming because there is always something
-                  new to learn and it encourages me to use problem solving skills.
-                </div>
-              </div>
-            </p>
-            
-            <p>
               <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#myHobbies" aria-expanded="false" aria-controls="myHobbies">
                   Hobbies
               </button>
@@ -89,38 +127,16 @@
                 </div>
               </div>
             </p>
+
+            </div>
+             
+            </div>
+    
+        <div class="row">
+          <div class="col-md-11">
             
-            <p>
-              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#myPrices" aria-expanded="false" aria-controls="myPrices">
-                  Prices
-              </button>
-            </p>
             
-            <p>
-              <div class="collapse" id="myPrices">
-                <div class="card-block">
-                  <p>
-                    <ul>
-                      <li>Bracelets: $4</li>
-                      <li>Backback Charms: 50¢</li>
-                      <li>Anklets: $4</li>
-                      <li>Necklaces: $4.50</li>
-                      <li>Dangling Earrings: $2</li>
-                      <li>Beads: Varies</li>
-                      <ul>
-                        <li>Some - Free</li>
-                        <li>Small - 1¢ each</li>
-                        <li>Medium - 3¢ each</li>
-                        <li>Large - 5¢ each</li>
-                        <li>Others - 10¢ each</li>
-                      </ul>
-                    </ul>
-                    
-                    <p>**Disclaimer: This is always up for change**</p>
-                  </p>
-                </div>
-              </div>
-            </p>
+            
           </div>
       </div>
     </div>

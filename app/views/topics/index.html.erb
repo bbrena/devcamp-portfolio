@@ -1,7 +1,13 @@
 <div class="col-sm-8 blog-main">
   
   <h1>Topics</h1>
+  
+      <br>
+  
+      <% @topics.each do |topic| %>
+        <p><%= link_to topic.title, topic_path(topic), class: 'btn btn-primary' %></p>
+      <% end %>
 
-  <%= render @topics %>   
+      <%= link_to 'All', blogs_path, class: 'btn btn-primary' %>
      
 </div>
