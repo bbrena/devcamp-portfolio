@@ -5,68 +5,123 @@
     <hr>
     
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-12">
         <%= image_tag "beadeddragonfly.jpeg", width: 300, alt: "Beaded Dragonfly", class: "beaded-dragonfly" %>
       </div>
+    </div>
     
-      <div class = "col-md-8">
-        <h4>My Family</h4>
-        
-        <p style = "font-size:14px">
-        Allow me to introduce myself. I am Brena A. I grew up with a very 
-        happy family of my mother, father, me, and my brother. I lived in a 
-        small house with a giant cherry tree. I loved the shade of that tree
-        and jumping on the trampoline under it and picking the cherries. My
-        dog was the best dog that ever lived. It was wonderful. I was 
-        devastated when my parents told me we were moving. We moved a small
-        distance, but I still miss that house very much. I learned to like
-        the house I live in now. Eventually, though, a new person arrived in
-        our family and disrupted the peacefulness. He was my great uncle.
-        We've had him for almost 4 years, but he was about 38 when his mother
-        died and we started caring for him because he was disabled. Ever since
-        then, my family was different. My brother, who has Diabetes and
-        Down Syndrome, acted more like him, which is getting to the point where
-        it is just down right wrong. Family issues have built up tension, and
-        now I think the only person who is truly happy in our family is him.
-        We are all either sad, slightly happy, or angry. It is just something
-        so complex and horrible that it can't be described in words. We are
-        still holding strong, though. My dad started his own business, and
-        my mom got a job. We are about to move again, but this time far away.
-        I don't think I will miss here too much after what's happened.
-        </p>
-
-        <h4>Experience In Coding</h4>
-        
-        <p style = "font-size:14px">
-        I have some experience in coding. I know HTML, CSS, SCSS, Ruby on Rails,
-        Ruby, BootStrap, Devise and the command line. I can work in the terminal
-        and in Sublime Text. This website was created from scratch with my
-        knowledge. I have taken <a href="http://ctsutah.com/" style="color: #33ccff">Code To Success</a>
-        and I have an account on <a href="https://www.codecademy.com/" style="color: #33ccff">CodeCademy</a>.
-        I also have accounts on <a href="https://www.pluralsight.com/" style="color: #33ccff">
-        PluralSight</a> and <a href="https://c9.io/?redirect=0" style="color: #33ccff">Cloud 9</a>. I have created my own Ruby
-        Gem and published it to <a href="https://rubygems.org/" style="color: #33ccff">RubyGems.org</a>.
-        I like coding and programming because there is always something new to
-        learn and it encourages me to use problem solving skills.
-        </p>
-
-        <h4>Hobbies</h4>
-        
-        <p style = "font-size:14px">
-        Obviously, one of my hobbies is coding and programming, but I also like to
-        bead and make jewelry, read books, play puzzle games, and just enjoy school.
-        I like to make jewelry, because I can use my hands for fine motor skills and
-        it makes something beautiful that someone can use. I enjoy reading books,
-        because it takes me away from the world, into somewhere I can just relax.
-        I play puzzle games because I find it is challenging and fun at the same
-        time. You complete one puzzle, and move on to the next and text your brain.
-        Lastly, I am fond of school because it simply gives you knowledge that
-        you will use later in life. My favorite subject is math, then science, 
-        history, and English. Most kids think school is the most boring thing, and 
-        is a waste of time, but I see it differently. It is somewhere to learn new
-        things and work hard.
-        </p>
+        <div class="row">
+          <div class="col-md-12">
+            <p>
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#myFamily" aria-expanded="false" aria-controls="myFamily">
+                My Family
+              </button>
+            </p>
+            
+            <p>
+              <div class="collapse" id="myFamily">
+                <div class="card-block">
+                    Allow me to introduce myself. I am Brena A. I grew up with a very 
+                  happy family of my mother, father, me, and my brother. I lived in a 
+                  small house with a giant cherry tree. I loved the shade of that tree
+                  and jumping on the trampoline under it and picking the cherries. My
+                  dog was the best dog that ever lived. It was wonderful. I was 
+                  devastated when my parents told me we were moving. We moved a small
+                  distance, but I still miss that house very much. I learned to like
+                  the house I live in now. Eventually, though, a new person arrived in
+                  our family and disrupted the peacefulness. He was my great uncle.
+                  We've had him for almost 4 years, but he was about 38 when his mother
+                  died and we started caring for him because he was disabled. Ever since
+                  then, my family was different. My brother, who has Diabetes and
+                  Down Syndrome, acted more like him, which is getting to the point where
+                  it is just down right wrong. Family issues have built up tension, and
+                  now I think the only person who is truly happy in our family is him.
+                  We are all either sad, slightly happy, or angry. It is just something
+                  so complex and horrible that it can't be described in words. We are
+                  still holding strong, though. My dad started his own business, and
+                  my mom got a job. We are about to move again, but this time far away.
+                  I don't think I will miss here too much after what's happened.
+                </div>
+              </div>
+            </p>
+            
+            <p>
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#codingExperience" aria-expanded="false" aria-controls="codingExperience">
+                Coding Experience
+              </button>
+            </p>
+            
+            <p>
+              <div class="collapse" id="codingExperience">
+                <div class="card-block">
+                    I have some experience in coding. I know HTML, CSS, SCSS, Ruby on Rails,
+                  Ruby, BootStrap, Devise and the command line. I can work in the terminal
+                  and in Sublime Text. This website was created from scratch with my knowledge.
+                  I have taken Code To Success and I have an account on CodeCademy. I also have
+                  accounts on PluralSight and Cloud 9. I have created my own RubyGem and published
+                  it to RubyGems.org. I like coding and programming because there is always something
+                  new to learn and it encourages me to use problem solving skills.
+                </div>
+              </div>
+            </p>
+            
+            <p>
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#myHobbies" aria-expanded="false" aria-controls="myHobbies">
+                  Hobbies
+              </button>
+            </p>
+            
+            <p>
+              <div class="collapse" id="myHobbies">
+                <div class="card-block">
+                    Obviously, one of my hobbies is coding and programming, but I also like to
+                  bead and make jewelry, read books, play puzzle games, and just enjoy school.
+                  I like to make jewelry, because I can use my hands for fine motor skills and
+                  it makes something beautiful that someone can use. I enjoy reading books,
+                  because it takes me away from the world, into somewhere I can just relax.
+                  I play puzzle games because I find it is challenging and fun at the same
+                  time. You complete one puzzle, and move on to the next and text your brain.
+                  Lastly, I am fond of school because it simply gives you knowledge that
+                  you will use later in life. My favorite subject is math, then science, 
+                  history, and English. Most kids think school is the most boring thing, and 
+                  is a waste of time, but I see it differently. It is somewhere to learn new
+                  things and work hard.
+                </div>
+              </div>
+            </p>
+            
+            <p>
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#myPrices" aria-expanded="false" aria-controls="myPrices">
+                  Prices
+              </button>
+            </p>
+            
+            <p>
+              <div class="collapse" id="myPrices">
+                <div class="card-block">
+                  <p>
+                    <ul>
+                      <li>Bracelets: $4</li>
+                      <li>Backback Charms: 50¢</li>
+                      <li>Anklets: $4</li>
+                      <li>Necklaces: $4.50</li>
+                      <li>Dangling Earrings: $2</li>
+                      <li>Beads: Varies</li>
+                      <ul>
+                        <li>Some - Free</li>
+                        <li>Small - 1¢ each</li>
+                        <li>Medium - 3¢ each</li>
+                        <li>Large - 5¢ each</li>
+                        <li>Others - 10¢ each</li>
+                      </ul>
+                    </ul>
+                    
+                    <p>**Disclaimer: This is always up for change**</p>
+                  </p>
+                </div>
+              </div>
+            </p>
+          </div>
       </div>
     </div>
-  </div>
 </div>
