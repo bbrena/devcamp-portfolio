@@ -27,8 +27,7 @@
       
       <% if logged_in?(:site_admin) %>
         <div class="">
-          <%= link_to "Edit Item", ed
-          it_portfolio_path(@portfolio_item), class: 'btn btn-warning' %>
+          <%= link_to "Edit Item", edit_portfolio_path(@portfolio_item), class: 'btn btn-warning' %>
         </div>
       <% end %>
     </div>  
