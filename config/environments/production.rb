@@ -84,4 +84,6 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   config.secret_key_base = ENV["SECRET_KEY_BASE"]
+  config.web_socket_server_url = "wss://brena-website.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://brena-website.herokuapp.com', 'http://brena-website.herokuapp.com']
 end
