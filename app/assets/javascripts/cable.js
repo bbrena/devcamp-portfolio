@@ -8,6 +8,6 @@
 (function() {
   this.App || (this.App = {});
 
-  App.cable = ActionCable.createConsumer("wss://brena-website.herokuapp.com");
+  App.cable = ActionCable.createConsumer();
 
 }).call(this);
