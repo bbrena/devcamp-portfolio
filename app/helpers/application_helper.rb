@@ -46,7 +46,7 @@ module ApplicationHelper
       },
       {
         url: beading_news_path,
-        title: 'Beading News'
+        title: 'IDK What News'
       }
     ]
   end
