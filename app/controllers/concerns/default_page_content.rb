@@ -6,7 +6,7 @@ module DefaultPageContent
   end
   
     def set_page_defaults 
-      @page_title  = "Cost Engineers Inc. Website"
-      @seo_keywords = "cost-engineers, Cost-Engineers, Cost-engineers, cost-Engineers, Cost Engineers, cost Engineers, Cost engineers, Cost-Engineers Inc., Cost-engineers Inc., Cost-engineers inc., cost-engineers inc., cost-engineers Inc."
+      @page_title  = "Cost Engineers, Inc. Website"
+      @seo_keywords = "Cost Engineers, Inc."
   end
 end
