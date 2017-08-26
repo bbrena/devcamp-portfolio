@@ -5,8 +5,8 @@ module DefaultPageContent
       before_filter :set_page_defaults 
   end
   
-    def set_page_defaults 
-      @page_title  = "Beading Brena's Jewelry"
-      @seo_keywords = "Beading Brena's Jewelry"
+  def set_page_defaults 
+    @page_title  = "Construction Cost Estimating Consulting Estimate Firm"
+    @seo_keywords = "Cost Engineers, Inc."
   end
 end

@@ -19,7 +19,7 @@ module ApplicationHelper
   end
   
   def copyright_generator
-    BadgerMushroomSnakeViewTool::Renderer.copyright "Beading Brena's Jewelry", "| All rights reserved"
+    BadgerMushroomSnakeViewTool::Renderer.copyright "Cost Engineers, Inc.", "| All rights reserved"
   end
   
   def nav_items
@@ -46,7 +46,7 @@ module ApplicationHelper
       },
       {
         url: beading_news_path,
-        title: 'Beading News'
+        title: 'IDK What News'
       }
     ]
   end
