@@ -19,7 +19,7 @@ module ApplicationHelper
   end
   
   def copyright_generator
-    BadgerMushroomSnakeViewTool::Renderer.copyright "Beading Brena's Jewelry", "| All rights reserved"
+    BadgerMushroomSnakeViewTool::Renderer.copyright "Beading Brena's Jewelry", "| All Rights Reserved."
   end
   
   def nav_items
@@ -74,6 +74,6 @@ module ApplicationHelper
   end
   
   def alert_generator msg
-    js add_gritter(msg, title: "Beading Brena's Website", sticky: false)
+    js add_gritter(msg, title: "Beading Brena's Jewelry Website", sticky: false)
   end
 end
